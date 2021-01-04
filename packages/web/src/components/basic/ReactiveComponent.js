@@ -132,6 +132,14 @@ class ReactiveComponent extends Component {
 				showFilter,
 				URLParams,
 			});
+		} else {
+			this.props.updateQuery({
+				componentId,
+				value: initialValue,
+				label: filterLabel,
+				showFilter,
+				URLParams,
+			});
 		}
 	}
 
@@ -157,6 +165,7 @@ class ReactiveComponent extends Component {
 				this.props.updateQuery({
 					componentId: this.props.componentId,
 					query: null,
+					URLParams: this.props.URLParams,
 				});
 			}
 		});
